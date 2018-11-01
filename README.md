@@ -2,7 +2,7 @@
 systematic learning of tf
 
 #### chapter three
-#####开发一个模型的基本步骤
+##### 开发一个模型的基本步骤
 #### chapter four
 ##### TF基础类型及操作函数
 ##### 共享变量的作用及用法
@@ -20,4 +20,6 @@ systematic learning of tf
 
 #### chapter eight
 ##### 参数太多如何解决
+
+注：思考时，从一个样本的角度进行思考
 
