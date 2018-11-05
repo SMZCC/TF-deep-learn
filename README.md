@@ -2,7 +2,8 @@
 systematic learning of tf
 
 #### chapter three
-##### 开发一个模型的基本步骤
+##### [开发一个模型的基本步骤](https://github.com/SMZCC/TF-deep-learn/blob/master/docs/chapter%20three.md)
+
 #### chapter four
 ##### TF基础类型及操作函数
 ##### 共享变量的作用及用法
