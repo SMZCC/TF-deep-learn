@@ -25,7 +25,9 @@ def main():
     _W = tf.Variable(tf.random_normal([1, ]), name='W')   # 对于一个样本来说，权重就应该是一个scalar，所以W的shape=(1,)
     _b = tf.Variable([0.1], name='b')
     out_ = tf.multiply(x, _W) + _b  # 与matmul的区别在于这个每个数都是乘以一样的W
-    loss_ = tf.reduce_mean(tf.square(out_ - y))
+    loss_ = tf.reduce_mean(tf.square(out_ - y), name='loss_')
+
+    tf.summary.scalar("total_loss", loss_)   # 前面的名字可以自己另外定义,不一定和原来标量一致
 
     lr = 0.001
     optimizer = tf.train.GradientDescentOptimizer(lr)
@@ -34,10 +36,11 @@ def main():
     # 训练模型
     EPOCHS = 20000
     init = tf.global_variables_initializer()
-    saver = tf.train.Saver()   # 必须要在图定义完毕之后生成该对象，否则没有可以保存的变量
+    saver = tf.train.Saver(max_to_keep=10)   # 必须要在图定义完毕之后生成该对象，否则没有可以保存的变量
     save_path = 'J:\\TF-deep-learn\\LinearRegression\\saved\\linear_model.ckpt'
     with tf.Session() as sess:
         sess.run(fetches=[init])
+        print('W 的初始值为：', sess.run(_W))    # 由于_W的值并不依赖于注入,故而在获取_W的值的时候，并不需要提供注入
         for epoch in range(EPOCHS):
             loss, _, W, b = sess.run([loss_, train_step, _W, _b], feed_dict={x: x_train, y: y_train})
             print("Epoch:{}, loss:{:.6f}, W:{}, B:{}".format(epoch, loss, W[0], b[0]))
