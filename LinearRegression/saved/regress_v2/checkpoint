@@ -1,0 +1,4 @@
+model_checkpoint_path: "J:\\TF-deep-learn\\LinearRegression\\saved\\regress_v2\\regressor_v2.ckpt-20000"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearRegression\\saved\\regress_v2\\regressor_v2.ckpt-19800"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearRegression\\saved\\regress_v2\\regressor_v2.ckpt-19900"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearRegression\\saved\\regress_v2\\regressor_v2.ckpt-20000"
