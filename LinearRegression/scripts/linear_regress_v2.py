@@ -5,6 +5,7 @@
 import tensorflow as tf
 import numpy as np
 from collections import OrderedDict
+from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
 
 
 config = OrderedDict()
@@ -19,6 +20,10 @@ def gen_data():
     x_train = np.linspace(-1, 1, 100)
     y_train = x_train * 2 + np.random.randn(*x_train.shape) * 0.3  # 产生样本的时候，让每个样本产生一些偏差
     return x_train, y_train
+
+
+def check_checkpoints(checkpoint_path):
+    print_tensors_in_checkpoint_file(checkpoint_path, None, True)
 
 
 class LinearRegressor(object):
@@ -89,11 +94,12 @@ class LinearRegressor(object):
 
 
 if __name__ == "__main__":
-    train_x, labels = gen_data()
-    model = LinearRegressor(config)
-    model.build()
-    model.train(train_x, labels)
-
+    # train_x, labels = gen_data()
+    # model = LinearRegressor(config)
+    # model.build()
+    # model.train(train_x, labels)
+    checkpoints_path = "J:\\TF-deep-learn\\LinearRegression\\saved\\regress_v2\\regressor_v2.ckpt-19800"
+    check_checkpoints(checkpoints_path)
 
 
 
