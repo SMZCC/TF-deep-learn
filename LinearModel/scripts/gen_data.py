@@ -18,6 +18,7 @@ def generate_data(num_classes, sample_size, mean, cov, diffs, one_hot=True):
         one_hot:  bool，指明标签是否使用one_hot编码表示,如果使用one_hot编码的话，分类的时候要使用softmax，
                   否则使用label*tf.log(outs) + (1-label)*tf.log(outs)
     :return:  X, Y : <tuple>, <tuple>
+    注：这个api有个问题，在非one-hot模式下，标签的轴是一个，在训练的时候，要手动加一个轴
     """
     samples_per_class = int(sample_size / num_classes)
 
