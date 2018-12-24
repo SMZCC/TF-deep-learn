@@ -2,6 +2,7 @@
 # date: 2018/11/16, 15:39
 # name: smz
 
+import copy
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -28,5 +29,40 @@ def show_data():
     plt.show()
 
 
+def demo_colorful_surface():
+
+    np.random.seed(10)
+
+    x = np.linspace(0, 1, 20)
+    y = np.linspace(0, 1, 20)
+    xs, ys = np.meshgrid(x, y)
+
+    z = np.exp(x**2+y**2)
+
+    fig = plt.figure()
+    # ax3d = Axes3D(fig)
+    ax3d_1 = fig.add_subplot(121, projection='3d')
+    colors_map_1 = np.random.rand(20, 20)
+    colors_map_2 = np.random.rand(20, 20)
+    colors_map_3 = np.random.rand(20, 20)
+    r = np.random.rand(20, 20)
+
+    colors_map = np.stack([colors_map_1, colors_map_2, colors_map_3, r], axis=2)
+
+    ax_2_colors_map = copy.deepcopy(colors_map)
+    ax3d_2 = fig.add_subplot(122, projection="3d")
+
+    ax_2_colors_map[0:2, 0:2, :] = [[[0.1, 0.1, 0.1, 0.5], [0.1, 0.1, 0.1, 0.5]],
+                               [[0.9, 0.9, 0.9, 0.5], [0.9, 0.9, 0.9, 0.5]]]
+
+    surf_1 = ax3d_1.plot_surface(xs, ys, z, facecolors=colors_map)
+    surf_2 = ax3d_2.plot_surface(xs, ys, z, facecolors=ax_2_colors_map)
+
+
+    plt.show()
+
+
+
+
 if __name__ == '__main__':
-    show_data()
+    demo_colorful_surface()

@@ -1,0 +1,1 @@
+tf.reduce_mean(tf.reduce_sum(y * pred, axis=1))

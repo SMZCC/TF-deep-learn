@@ -81,7 +81,7 @@ class LinearRegressor(object):
 
     def train(self, train_xs, labels):
         with tf.Session() as sess:
-            sess.run(tf.global_variables_initializer())
+            sess.run(tf.global_variables_initializer())   # 放在这里的话，外部循环调用方法，每次都会执行init操作，有问题
             feed_dict = {self.inputs['train_x']:train_xs, self.inputs['train_label']:labels}
             for i in range(self.config['epochs']):
                 loss_value, _, merge_str, global_step_value = sess.run([self.loss, self.train_step, self.merge_op, self.global_step],

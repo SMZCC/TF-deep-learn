@@ -1,0 +1,4 @@
+model_checkpoint_path: "J:\\TF-deep-learn\\Mnist\\checkpoints\\MnistSotfmax.ckpt-13750"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\Mnist\\checkpoints\\MnistSotfmax.ckpt-8250"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\Mnist\\checkpoints\\MnistSotfmax.ckpt-11000"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\Mnist\\checkpoints\\MnistSotfmax.ckpt-13750"

@@ -1,0 +1,1 @@
+tf.reduce_mean(tf.square(y - pred))
