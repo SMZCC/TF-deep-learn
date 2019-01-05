@@ -62,7 +62,15 @@ def demo_colorful_surface():
     plt.show()
 
 
+def demo_python():
+    x = 100
+    def hello():
+
+        print(x)
+
+    hello()
+
 
 
 if __name__ == '__main__':
-    demo_colorful_surface()
+    demo_python()

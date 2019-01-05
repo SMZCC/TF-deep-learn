@@ -10,7 +10,7 @@ from LinearModel.configuration.options import opts
 
 def TumorModelTrain():
     data_X = np.load("../data/train_data_X.npy")
-    data_Y = np.load("../data/train_data_Y.npy")
+    data_Y = np.load("../data/train_data_Y.npy")   # [0., 0., 1., 1., ...]
     data_Y = np.expand_dims(data_Y, axis=1)
 
     tumor_model = TumorModel(opts)

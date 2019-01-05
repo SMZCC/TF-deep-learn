@@ -5,7 +5,8 @@
 
 import torch as th
 import numpy as np
-from torch.autograd import Variable
+import torch.autograd.variable as Variable
+import torch.nn as nn
 
 
 
@@ -33,5 +34,16 @@ def demo_one():
     print("grads:{}\n".format(grads))
 
 
+def demo_two():
+    x = th.tensor([-1, 0, 1, 2], dtype=th.float32, requires_grad=True)
+    x = x.cuda()    # 这里不能放到GPU上，否则算出来的梯度为None
+    relu_layer = nn.ReLU()
+    res = relu_layer(x)
+    loss = th.sum(res, dim=0)
+    loss.backward()
+    print("x:{}\n".format(x))
+    print("x.grad:{}\n".format(x.grad))
+
+
 if __name__ == "__main__":
-    demo_one()
+    demo_two()

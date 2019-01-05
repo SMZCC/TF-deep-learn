@@ -1,4 +1,4 @@
-model_checkpoint_path: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\tumor_model-600"
-all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\tumor_model-540"
-all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\tumor_model-570"
-all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\tumor_model-600"
+model_checkpoint_path: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\model3s.ckpt-8000"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\model3s.ckpt-6400"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\model3s.ckpt-7200"
+all_model_checkpoint_paths: "J:\\TF-deep-learn\\LinearModel\\checkpoints\\model3s.ckpt-8000"

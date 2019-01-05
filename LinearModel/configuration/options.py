@@ -8,7 +8,7 @@ opts = OrderedDict()
 
 opts["epochs"] = 100
 opts["batch_size"] = 25
-opts["learning_rate"] = 0.04
+opts["learning_rate"] = 0.001
 opts["log_dir"] = "J:\\TF-deep-learn\\LinearModel\\logs\\"
 opts["checkpoints_dir"] = "J:\\TF-deep-learn\\LinearModel\\checkpoints\\"
 

@@ -17,7 +17,7 @@ def check_results():
 
 
 def plot_results():
-    """原表达式为：z = w1x1 + w2x2+b，现将其投影到由x1,与x2构成的平面上来,有：x2 = -x1*w1/w2 - b/w2"""
+    """原学习的表达式为：z = w1x1 + w2x2+b，现将其投影到由x1,与x2构成的平面上来,有：x2 = -x1*w1/w2 - b/w2"""
     data_X = np.load("../data/train_data_X.npy")
     data_Y = np.load("../data/train_data_Y.npy")
     tumor_model = TumorModel(opts)
@@ -41,7 +41,6 @@ def plot_results():
     ax.scatter(data_X[:, 0], data_X[:, 1], c=colors)
     ax.plot(x, y)
     plt.show()
-
 
 if __name__ == "__main__":
     plot_results()
