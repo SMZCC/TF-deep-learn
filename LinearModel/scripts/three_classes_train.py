@@ -57,9 +57,9 @@ def train_3_classes():
                 start_pointer = end_pointer
 
                 feed_dict = {model3.inputs: batch_x, model3.labels: batch_y}
-                loss_value, glob_step_value, merge_str, _= sess.run(fetches=[model3.loss, model3.global_step, model3.merge_op,
-                                                                                           model3.train_step],
-                                                                                  feed_dict=feed_dict)
+                loss_value, glob_step_value, merge_str, _ = sess.run(
+                    fetches=[model3.loss, model3.global_step, model3.merge_op,model3.train_step],
+                    feed_dict=feed_dict)
                 model3.writer.add_summary(merge_str, global_step=glob_step_value)
 
                 print("epoch:%d, step:%d, loss:%.6f"%(epoch, glob_step_value, loss_value))

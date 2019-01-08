@@ -41,7 +41,7 @@ def demo_colorful_surface():
 
     fig = plt.figure()
     # ax3d = Axes3D(fig)
-    ax3d_1 = fig.add_subplot(121, projection='3d')
+    ax3d_1 = fig.add_subplot(1, 2, 1, projection='3d')  # 这里的这个projection之所以能够成功是因为导入了Axes3D
     colors_map_1 = np.random.rand(20, 20)
     colors_map_2 = np.random.rand(20, 20)
     colors_map_3 = np.random.rand(20, 20)
@@ -73,4 +73,4 @@ def demo_python():
 
 
 if __name__ == '__main__':
-    demo_python()
+    demo_colorful_surface()

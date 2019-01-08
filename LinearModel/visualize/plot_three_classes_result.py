@@ -43,13 +43,13 @@ def plot_3_classes_results():
     x = np.linspace(-2, 8, 200)
 
     y = - x * weights_value[0][0] / weights_value[1][0]  - biases_value[0] / weights_value[1][0]
-    ax.plot(x, y, 'r-', label="line1", lw=1)
+    ax.plot(x, y, 'b-', label="line1", lw=1)
 
     y = - x * weights_value[0][1] / weights_value[1][1] - biases_value[1] / weights_value[1][1]
-    ax.plot(x, y, 'b-', label="line2", lw=2)
+    ax.plot(x, y, 'g-', label="line2", lw=2)
 
     y = - x * weights_value[0][2] / weights_value[1][2] - biases_value[2] /weights_value[1][2]
-    ax.plot(x, y, 'y-', label="line3", lw=3)
+    ax.plot(x, y, 'r-', label="line3", lw=3)
 
     plt.legend(loc=1)
     plt.show()

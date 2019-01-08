@@ -20,8 +20,8 @@ class TumorModel(object):
             biases = tf.get_variable(name="biases", dtype=tf.float32, initializer=tf.constant_initializer(0.0), shape=(1, ))
 
         logits = tf.matmul(self.inputs, weights) + biases
-        probability = tf.nn.sigmoid(logits)
-        self.loss = tf.reduce_mean(- self.labels * tf.log(probability) - (1 - self.labels) * tf.log(1 - probability))
+        self.probability = tf.nn.sigmoid(logits)
+        self.loss = tf.reduce_mean(- self.labels * tf.log(self.probability) - (1 - self.labels) * tf.log(1 - self.probability))
         tf.summary.scalar('Loss', self.loss)
 
         self.optimizer = tf.train.AdamOptimizer(learning_rate=self.opts["learning_rate"])
