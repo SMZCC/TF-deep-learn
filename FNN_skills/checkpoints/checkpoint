@@ -1,0 +1,4 @@
+model_checkpoint_path: "xor.ckpt-1000"
+all_model_checkpoint_paths: "xor.ckpt-980"
+all_model_checkpoint_paths: "xor.ckpt-990"
+all_model_checkpoint_paths: "xor.ckpt-1000"

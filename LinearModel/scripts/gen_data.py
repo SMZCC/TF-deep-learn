@@ -33,7 +33,8 @@ def generate_data(num_classes, sample_size, mean, cov, diffs, one_hot=True):
         y0 = np.concatenate((y0, y1))
 
     if one_hot:
-        class_idx = [ y0 == class_number for class_number in range(num_classes)]  # class_idx中两个元素：第一个元素为y0与0比较的结果，第二个元素为y0与1比较的结果
+        class_idx = [ y0 == class_number for class_number in range(num_classes)]  # 若有两类，则y0比较两次，
+                                                                                  # class_idx中两个元素：第一个元素为y0与0比较的结果，第二个元素为y0与1比较的结果
         class_idxs = [np.expand_dims(array, axis=1) for array in class_idx]
         y = np.asarray(np.hstack(class_idxs), dtype=np.float32)
         samples = zip(x0, y)

@@ -1,0 +1,4 @@
+model_checkpoint_path: "plan_b.ckpt-10000"
+all_model_checkpoint_paths: "plan_b.ckpt-9980"
+all_model_checkpoint_paths: "plan_b.ckpt-9990"
+all_model_checkpoint_paths: "plan_b.ckpt-10000"
